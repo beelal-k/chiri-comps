@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dashboard-container {
+        margin: 0 auto;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: black;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        color: black;
+      }
+
+      .subtitle {
+        color: #9ca3af;
+        font-size: 1.2em;
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .facts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+      }
+
+      .fact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .fact-header {
+        color: #9ca3af;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      .fact-value {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: black;
+      }
+
+      .fact-description {
+        color: #9ca3af;
+        font-size: 0.9em;
+        line-height: 1.6;
+        max-width: 280px;
+      }
+
+      .search-button {
+        background: #c4276c;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 6px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-button:hover {
+        background: #a61f5a;
+      }
+
+      .divider {
+        width: 40px;
+        height: 2px;
+        background: #4a3465;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <h1>Quick facts about easyJet</h1>
+      <div class="subtitle">
+        Find information about flight duration, flight prices and popular routes
+        for easyJet
+      </div>
+
+      <div class="facts-grid">
+        <div class="fact-item">
+          <div class="fact-header">Cheapest route</div>
+          <div class="fact-value">93 kr.</div>
+          <div class="divider"></div>
+          <div class="fact-description">
+            The cheapest route that easyJet flies from Luxembourg to Porto can
+            be found for 93 kr.
+          </div>
+        </div>
+
+        <div class="fact-item">
+          <div class="fact-header">Most popular route</div>
+          <div class="fact-value">CDG to CPH</div>
+          <div class="divider"></div>
+          <div class="fact-description">
+            The flight from Paris Charles De Gaulle to Copenhagen Kastrup is
+            currently the most popular route with easyJet
+          </div>
+        </div>
+
+        <div class="fact-item">
+          <div class="fact-header">Shortest flight</div>
+          <div class="fact-value">1 hr 05 min.</div>
+          <div class="divider"></div>
+          <div class="fact-description">
+            The fastest flight with easyJet takes 1 hour 05 minutes from Paris
+            (ORY) to Geneva (GVA)
+          </div>
+        </div>
+
+        <div class="fact-item">
+          <div class="fact-header">Longest flight</div>
+          <div class="fact-value">3 hours 25 minutes.</div>
+          <div class="divider"></div>
+          <div class="fact-description">
+            The longest flight with easyJet takes 3 hours 25 minutes from
+            Marrakech (RAK) to Paris (CDG)
+          </div>
+        </div>
+      </div>
+
+      <button class="search-button">Search for flight deals</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .flight-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+      }
+
+      .airline-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .airline-logo {
+        width: 30px;
+        height: 30px;
+        background: #ff6600;
+        border-radius: 4px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+      }
+
+      .airline-name {
+        color: #333;
+        font-size: 14px;
+      }
+
+      .flight-info {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .departure,
+      .arrival {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .city {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 4px;
+      }
+
+      .airport {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .duration {
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        padding: 8px;
+        background: #f5f5f5;
+        border-radius: 20px;
+      }
+
+      .time {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 4px;
+      }
+
+      .price-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .find-similar {
+        background: #c4276c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .find-similar:hover {
+        background: #a61f5a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flight-card">
+      <div class="airline-header">
+        <div class="airline-logo">e</div>
+        <div class="airline-name">easyJet</div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">09:40</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+
+        <div class="duration">1 hour 45 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">11:25</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">07:15</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+
+        <div class="duration">1 hour 55 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">09:10</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <div class="price">338 kr.</div>
+        <button class="find-similar">Find similar</button>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="airline-header">
+        <div class="airline-logo">e</div>
+        <div class="airline-name">easyJet</div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">09:40</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+
+        <div class="duration">1 hour 45 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">11:25</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">07:15</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+
+        <div class="duration">1 hour 55 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">09:10</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <div class="price">338 kr.</div>
+        <button class="find-similar">Find similar</button>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="airline-header">
+        <div class="airline-logo">e</div>
+        <div class="airline-name">easyJet</div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">09:40</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+
+        <div class="duration">1 hour 45 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">11:25</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">07:15</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+
+        <div class="duration">1 hour 55 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">09:10</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <div class="price">338 kr.</div>
+        <button class="find-similar">Find similar</button>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="airline-header">
+        <div class="airline-logo">e</div>
+        <div class="airline-name">easyJet</div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">09:40</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+
+        <div class="duration">1 hour 45 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">11:25</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">07:15</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+
+        <div class="duration">1 hour 55 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">09:10</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <div class="price">338 kr.</div>
+        <button class="find-similar">Find similar</button>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="airline-header">
+        <div class="airline-logo">e</div>
+        <div class="airline-name">easyJet</div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">09:40</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+
+        <div class="duration">1 hour 45 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">11:25</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+      </div>
+
+      <div class="flight-info">
+        <div class="departure">
+          <div class="time">07:15</div>
+          <div class="city">BSL</div>
+          <div class="airport">Basel EuroAirport Swiss</div>
+        </div>
+
+        <div class="duration">1 hour 55 minutes.</div>
+
+        <div class="arrival">
+          <div class="time">09:10</div>
+          <div class="city">Copenhagen</div>
+          <div class="airport">Copenhagen Kastrup</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <div class="price">338 kr.</div>
+        <button class="find-similar">Find similar</button>
+      </div>
+    </div>
+  </body>
+</html>

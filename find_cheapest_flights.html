@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header h1 {
+        color: #333;
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .filter-button {
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        color: #333;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-button.active {
+        background: rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .subheader {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .subheader h2 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .subheader p {
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      .flight-cards {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .flight-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        width: 300px;
+        color: #333;
+        opacity: 1;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .flight-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .flight-info {
+        margin-bottom: 20px;
+      }
+
+      .flight-route {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .airline-logo {
+        width: 30px;
+        height: 30px;
+        background: #e12;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 4px;
+      }
+
+      .sas-logo {
+        background: #006;
+      }
+
+      .time-duration {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        margin-left: auto;
+      }
+
+      .route {
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .airline-name {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .find-offers {
+        background: #c33;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .find-offers:hover {
+        background: #b22;
+        transform: translateY(-1px);
+      }
+
+      .date {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        margin-top: 15px;
+      }
+
+      .last-minute-badge {
+        background: #e12;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <!-- Rest of the HTML and JavaScript remains exactly the same -->
+  <body>
+    <div class="header">
+      <h1>Find the cheapest flights from Denmark to Aalborg</h1>
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-button active" data-filter="return">
+        Return trip
+      </button>
+      <button class="filter-button" data-filter="single">Single trip</button>
+      <button class="filter-button" data-filter="lastminute">
+        Last minute
+      </button>
+      <button class="filter-button" data-filter="direct">Direct</button>
+    </div>
+
+    <div class="subheader">
+      <h2>Cheap return flights</h2>
+      <p>
+        Recommended offers for return flights departing in the coming months
+        from the most popular airlines flying to Aalborg.
+      </p>
+    </div>
+
+    <div id="flightCards" class="flight-cards"></div>
+
+    <script>
+      // Same JavaScript code as before
+      const flightData = {
+        return: [
+          {
+            outbound: { time: "07:30 - 08:15", route: "CPH - AAL" },
+            inbound: { time: "17:45 - 18:30", route: "AAL - CPH" },
+            price: "809",
+            airline: "Norwegian",
+            date: "Thu. 23 Jan. - Thu. 23 Jan.",
+            isDirect: true,
+            isLastMinute: false,
+          },
+          {
+            outbound: { time: "14:10 - 14:55", route: "CPH - AAL" },
+            inbound: { time: "18:55 - 19:40", route: "AAL - CPH" },
+            price: "831",
+            airline: "Norwegian",
+            date: "Wed. Feb 5 - Wed. Feb 5",
+            isDirect: true,
+            isLastMinute: false,
+          },
+          {
+            outbound: { time: "18:55 - 19:40", route: "CPH - AAL" },
+            inbound: { time: "16:45 - 17:30", route: "AAL - CPH" },
+            price: "954",
+            airline: "SAS",
+            date: "Fri. Feb. 21 - Sun. Feb. 23",
+            isDirect: true,
+            isLastMinute: false,
+          },
+        ],
+        single: [
+          {
+            outbound: { time: "09:30 - 10:15", route: "CPH - AAL" },
+            price: "499",
+            airline: "Norwegian",
+            date: "Mon. Jan 27",
+            isDirect: true,
+            isLastMinute: false,
+          },
+          {
+            outbound: { time: "12:15 - 14:30", route: "CPH - AAL" },
+            price: "399",
+            airline: "SAS",
+            date: "Wed. Jan 29",
+            isDirect: false,
+            isLastMinute: false,
+          },
+        ],
+        lastminute: [
+          {
+            outbound: { time: "16:30 - 17:15", route: "CPH - AAL" },
+            inbound: { time: "19:45 - 20:30", route: "AAL - CPH" },
+            price: "599",
+            airline: "Norwegian",
+            date: "Today - Tomorrow",
+            isDirect: true,
+            isLastMinute: true,
+          },
+          {
+            outbound: { time: "08:00 - 08:45", route: "CPH - AAL" },
+            price: "299",
+            airline: "SAS",
+            date: "Today",
+            isDirect: true,
+            isLastMinute: true,
+          },
+        ],
+      };
+
+      function createFlightCard(flight) {
+        const card = document.createElement("div");
+        card.className = "flight-card";
+
+        let html = '<div class="flight-info">';
+
+        if (flight.isLastMinute) {
+          html += '<div class="last-minute-badge">Last Minute Deal!</div>';
+        }
+
+        // Outbound flight
+        html += `
+        <div class="flight-route">
+          <div class="airline-logo ${
+            flight.airline === "SAS" ? "sas-logo" : ""
+          }">✈</div>
+          <div>
+            <div>${flight.outbound.time}</div>
+            <div class="route">${flight.outbound.route}</div>
+          </div>
+          <div class="time-duration">0 h. 45 min.<br>${
+            flight.isDirect ? "direct" : "connection"
+          }</div>
+        </div>
+      `;
+
+        // Inbound flight (if return trip)
+        if (flight.inbound) {
+          html += `
+          <div class="flight-route">
+            <div class="airline-logo ${
+              flight.airline === "SAS" ? "sas-logo" : ""
+            }">✈</div>
+            <div>
+              <div>${flight.inbound.time}</div>
+              <div class="route">${flight.inbound.route}</div>
+            </div>
+            <div class="time-duration">0 h. 45 min.<br>${
+              flight.isDirect ? "direct" : "connection"
+            }</div>
+          </div>
+        `;
+        }
+
+        html += `
+        </div>
+        <div class="price">${flight.price} kr.</div>
+        <div class="airline-name">${flight.airline}</div>
+        <button class="find-offers">Find offers</button>
+        <div class="date">${flight.date}</div>
+      `;
+
+        card.innerHTML = html;
+        return card;
+      }
+
+      function updateTitle(filterType) {
+        const titles = {
+          return: "Cheap return flights",
+          single: "Cheap single trips",
+          lastminute: "Last minute deals",
+          direct: "Direct flights only",
+        };
+        document.querySelector(".subheader h2").textContent =
+          titles[filterType];
+      }
+
+      function filterFlights(filterType) {
+        const container = document.getElementById("flightCards");
+        container.innerHTML = "";
+
+        let flights = [];
+        if (filterType === "direct") {
+          // Combine all direct flights
+          Object.values(flightData)
+            .flat()
+            .forEach((flight) => {
+              if (flight.isDirect) flights.push(flight);
+            });
+        } else {
+          flights = flightData[filterType] || [];
+        }
+
+        flights.forEach((flight) => {
+          container.appendChild(createFlightCard(flight));
+        });
+      }
+
+      // Initialize with return flights
+      filterFlights("return");
+
+      // Add click handlers to filter buttons
+      document.querySelectorAll(".filter-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          // Update active button
+          document
+            .querySelectorAll(".filter-button")
+            .forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          // Update flights
+          const filterType = button.dataset.filter;
+          filterFlights(filterType);
+          updateTitle(filterType);
+        });
+      });
+    </script>
+  </body>
+</html>

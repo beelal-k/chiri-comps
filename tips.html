@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dashboard-container {
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        color: black;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        color: #9ca3af;
+        font-size: 1.2em;
+        margin-bottom: 40px;
+      }
+
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .stat-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-title {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 20px;
+      }
+
+      .stat-value {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #1f2937;
+        margin: 15px 0;
+      }
+
+      .stat-description {
+        color: #4b5563;
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 25px;
+      }
+
+      .search-button {
+        background: #c4276c;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 6px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-button:hover {
+        background: #a61f5a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <h1>Tips and cheap deals on flights to Aalborg</h1>
+      <div class="subtitle">
+        Overview of flight prices, flight times and airlines to Aalborg
+      </div>
+
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-title">Best price for one-way tickets</div>
+          <div class="stat-value">448 kr.</div>
+          <div class="stat-description">
+            The best price for a one-way ticket to Aalborg from Denmark in the
+            last 72 hours is 448 DKK (Copenhagen Kastrup to Aalborg).
+          </div>
+          <button class="search-button">Search for offers</button>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-title">Best price for a return ticket</div>
+          <div class="stat-value">809 kr.</div>
+          <div class="stat-description">
+            The best price for a return ticket to Aalborg from Denmark in the
+            last 72 hours is 809 DKK (Copenhagen Kastrup to Aalborg).
+          </div>
+          <button class="search-button">Search for offers</button>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-title">Fastest flight time</div>
+          <div class="stat-value">0 h. 45 min.</div>
+          <div class="stat-description">
+            The fastest flight to Aalborg from Denmark takes 0 h 45 min
+            (Copenhagen Kastrup to Aalborg).
+          </div>
+          <button class="search-button">Search for offers</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
