@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+      .chart-container {
+        width: 45%;
+        margin: 20px;
+        padding: 20px;
+        display: inline-block;
+        background: rgba(20, 10, 30, 0.2);
+        border-radius: 10px;
+      }
+      .charts-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="charts-grid">
+      <div class="chart-container">
+        <canvas id="yearlyTrend"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="comparePrice"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="weeklyPrices"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="dayTimePrices"></canvas>
+      </div>
+    </div>
+
+    <script>
+      // Yearly Trend Chart
+      new Chart(document.getElementById("yearlyTrend"), {
+        type: "line",
+        data: {
+          labels: [
+            "jan",
+            "feb",
+            "mar",
+            "apr",
+            "maj",
+            "juni",
+            "juli",
+            "aug",
+            "sep",
+            "okt",
+            "nov",
+            "dec",
+          ],
+          datasets: [
+            {
+              label: "Price Trend (kr.)",
+              data: [
+                850, 900, 850, 920, 880, 860, 880, 900, 920, 940, 980, 1040,
+              ],
+              borderColor: "#FFB700",
+              tension: 0.4,
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff",
+              },
+            },
+          },
+          scales: {
+            y: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+            x: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+          },
+        },
+      });
+
+      // Compare Price Chart
+      new Chart(document.getElementById("comparePrice"), {
+        type: "bar",
+        data: {
+          labels: ["Gennemsnitspris", "Laveste pris"],
+          datasets: [
+            {
+              label: "Price Comparison (kr.)",
+              data: [1007, 589],
+              backgroundColor: ["#36A2EB", "#36A2EB"],
+              borderColor: ["#36A2EB", "#36A2EB"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff",
+              },
+            },
+          },
+          scales: {
+            y: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+            x: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+          },
+        },
+      });
+
+      // Weekly Prices Chart
+      new Chart(document.getElementById("weeklyPrices"), {
+        type: "bar",
+        data: {
+          labels: ["man.", "tir.", "ons.", "tor.", "fre.", "lør.", "søn."],
+          datasets: [
+            {
+              label: "Weekly Prices (kr.)",
+              data: [880, 885, 890, 901, 874, 920, 890],
+              backgroundColor: "#9c27b0",
+              borderColor: "#9c27b0",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff",
+              },
+            },
+          },
+          scales: {
+            y: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+            x: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+          },
+        },
+      });
+
+      // Day Time Prices Chart
+      new Chart(document.getElementById("dayTimePrices"), {
+        type: "bar",
+        data: {
+          labels: [
+            "om morgenen",
+            "om formiddagen",
+            "om eftermiddagen",
+            "om aftenen",
+          ],
+          datasets: [
+            {
+              label: "Day Time Prices (kr.)",
+              data: [868, 890, 910, 946],
+              backgroundColor: "#4CAF50",
+              borderColor: "#4CAF50",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff",
+              },
+            },
+          },
+          scales: {
+            y: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+            x: {
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+              },
+              ticks: {
+                color: "#fff",
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
